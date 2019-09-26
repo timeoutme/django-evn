@@ -1,0 +1,40 @@
+{% extends 'theme.html' %}
+
+{% block content %}
+<div class="container text-center" ><p><span style="color: red">{{错误}}</span></p></div>
+
+<table class="table table-hover table-striped container">
+  <thead>
+    <tr class="table-secondary">
+      <th scope="col">序号</th>
+      <th scope="col">待办事项</th>
+      <th scope="col">划掉</th>
+      <th scope="col">修改</th>
+      <th scope="col">删除</th>
+    </tr>
+  </thead>
+  <tbody> 
+    {% for item in 事项 %} 
+    <tr>
+      <th scope="row">{{forloop.counter}}</th>
+      <td>{{item}}</td>
+      <form action="{% url '待完成事项' %}" method="post">
+      {% csrf_token %}
+        <td>
+          <a href="" style="text-decoration-line: none">划掉</a>
+        </td>
+        <td>  
+          {% block edit %} {% endblock edit %}     
+          <a href="{% url '修改' forloop.counter %}" style="text-decoration-line: none">修改</a>
+        </td>
+        <td>
+          <a href="" style="text-decoration-line: none">删除</a>
+        </td>
+      </form>
+    </tr>
+    {% endfor %}  
+  </tbody>
+
+</table>
+
+{% endblock content %}

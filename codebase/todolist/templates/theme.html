@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!-- 新 Bootstrap4 核心 CSS 文件 -->
+    <link rel="stylesheet" href="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/css/bootstrap.min.css">
+    
+    
+
+    <title>Document</title>
+</head>
+<body>
+    <div >
+        <nav class="container navbar navbar-dark bg-dark navbar-expand-lg navbar-light bg-light" style="font-size: 18px" >
+            
+            
+            <ul class="navbar-nav mr-auto mt-2 mt-lg-0" >
+                <li class="nav-item active" style="margin-right: 15px">
+                <a class="nav-link" href="{% url '待完成事项' %}">待完成事项 </a>
+                </li>
+                <li class="nav-item"style="margin-right: 15px">
+                <a class="nav-link" href="{% url '已完成事项' %}">已完成事项</a>
+                </li>
+                <li class="nav-item"style="margin-right: 15px">
+                <a class="nav-link " href="#" >关于本站</a>
+                </li>
+            </ul>
+            <form class="form-inline my-2 my-lg-0" method="POST" action="{% url '待完成事项' %}">
+                {% csrf_token %}
+                <input class="form-control mr-sm-2" type="search" placeholder="待办事项" aria-label="Search" name="待办事项">
+                <button class="btn btn-outline-success my-2 my-sm-0" type="submit">添加</button>
+            </form>
+            </div>
+        </nav>
+    </div>
+    
+    {% block content %}
+
+
+    {% endblock content %}
+
+
+</body>
+<!-- jQuery文件。务必在bootstrap.min.js 之前引入 -->
+<script src="https://cdn.staticfile.org/jquery/3.2.1/jquery.min.js"></script>
+    
+<!-- bootstrap.bundle.min.js 用于弹窗、提示、下拉菜单，包含了 popper.min.js -->
+<script src="https://cdn.staticfile.org/popper.js/1.15.0/umd/popper.min.js"></script>
+
+<!-- 最新的 Bootstrap4 核心 JavaScript 文件 -->
+<script src="https://cdn.staticfile.org/twitter-bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+</html>

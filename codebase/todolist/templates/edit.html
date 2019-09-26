@@ -1,0 +1,13 @@
+
+{% extends 'to_do_lists.html' %}
+
+
+
+{% block edit %}
+<form action=" {% url '待完成事项' forloop.counter %} " method="post">
+    <input type="text" name="修改" >
+    <button type="submit">保存</button>
+</form>
+{% endblock edit %}
+
+
