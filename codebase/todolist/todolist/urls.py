@@ -15,14 +15,14 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import to_do_lists, completed_lists, line,delete, edit, cexiao
+from todo.views import to_do_lists, completed_lists, line,delete, edit, cexiao
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',to_do_lists, name='待完成事项'),
     path('completed/>', completed_lists, name='已完成事项'),
-    path('line/<forloop_counter>',line,name='划掉'),
-    path('delete/<forloop_counter>',delete,name='删除'),
-    path('edit/<forloop_counter>',edit,name='修改'),
-    path('cexiao/<forloop_counter>',cexiao,name='撤销'),
+    path('line/<item_id>',line,name='划掉'),
+    path('delete/<item_id>',delete,name='删除'),
+    path('edit/<item_id>',edit,name='修改'),
+    path('cexiao/<item_id>',cexiao,name='撤销'),
 ]
