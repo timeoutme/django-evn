@@ -22,7 +22,7 @@
             <form action="{% url '待完成事项' %}" method="post">
             {% csrf_token %}
               <td>
-                <a href="" style="text-decoration-line: none">撤销</a>
+                <a href="{% url '撤销' forloop.counter %}"" style="text-decoration-line: none">撤销</a>
               </td>
               <td class="text-secondary" style="width: 200px;">               
                 不可修改

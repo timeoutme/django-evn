@@ -38,6 +38,9 @@ def edit(request,forloop_counter):
         return render(request,'edit.html')    
 
 
+def cexiao(request,forloop_counter):
+    items[int(forloop_counter)-1]['完成'] = False
+    return redirect('待完成事项')
 
 def completed_lists(request):
-    return render(request,'completed_lists.html')
+    return render(request,'completed_lists.html',{'事项':items})

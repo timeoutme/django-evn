@@ -1,6 +1,43 @@
 {% extends 'theme.html' %}
 
 {% block content %}
+<table class="table table-hover table-striped container">
+  <thead>
+    <tr class="table-secondary">
+      <th scope="col">序号</th>
+      <th scope="col">待办事项</th>
+      <th scope="col">划掉</th>
+      <th scope="col">编辑</th>
+      <th scope="col">删除</th>
+    </tr>
+  </thead>
+  <tbody> 
+    {% for item in 事项 %} 
+      {% if item.完成  %}
+        <tr>
+            <th scope="row">{{forloop.counter}}</th>
+            <td style="text-decoration:line-through">{{item.待办事项}}</td>
+            <form action="{% url '待完成事项' %}" method="post">
+            {% csrf_token %}
+              <td>
+                <a href="" style="text-decoration-line: none">撤销</a>
+              </td>
+              <td class="text-secondary" style="width: 200px;">               
+                不可修改
+                
+              </td>
+              <td>
+                <a href="{% url '删除' forloop.counter %}" style="text-decoration-line: none">删除</a>
+              </td>
+            </form>
+          </tr>
+      {% else %}
+        
+      {% endif %}
+        
+    {% endfor %}  
+  </tbody>
 
+</table>
 
 {% endblock content %}
