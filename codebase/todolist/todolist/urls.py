@@ -15,11 +15,13 @@ Including another URLconf
 """
 from django.contrib import admin
 from django.urls import path
-from .views import to_do_lists, completed_lists, edit_items
+from .views import to_do_lists, completed_lists, line,delete, edit
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('',to_do_lists, name='待完成事项'),
-    path('completed/', completed_lists, name='已完成事项'),
-    path('edit/<forloop_counter>',edit_items,name='修改'),
+    path('completed/>', completed_lists, name='已完成事项'),
+    path('line/<forloop_counter>',line,name='划掉'),
+    path('delete/<forloop_counter>',delete,name='删除'),
+    path('edit/<forloop_counter>',edit,name='修改'),
 ]
