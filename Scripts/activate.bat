@@ -1,6 +1,6 @@
 @echo off
 
-set "VIRTUAL_ENV=c:\Users\Administrator\Desktop\django-evn"
+set "VIRTUAL_ENV=G:\python\django-ven"
 
 if defined _OLD_VIRTUAL_PROMPT (
     set "PROMPT=%_OLD_VIRTUAL_PROMPT%"
@@ -13,7 +13,7 @@ if defined _OLD_VIRTUAL_PROMPT (
     )
 )
 if not defined VIRTUAL_ENV_DISABLE_PROMPT (
-    set "PROMPT=(django-evn) %PROMPT%"
+    set "PROMPT=(django-ven) %PROMPT%"
 )
 
 REM Don't use () to avoid problems with them in %PATH%
